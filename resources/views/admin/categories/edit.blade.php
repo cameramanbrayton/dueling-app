@@ -19,6 +19,7 @@
                     <form method="POST" action="{{ route('admin.categories.update', $category->id) }}" enctype="multipart/form-data">
                         @csrf
                         @method('PUT')
+                        <!-- Name -->
                         <div class="sm:col-span-6">
                             <label for="name" class="block text-sm font-medium text-gray-700"> Name </label>
                             <div class="mt-1">
@@ -29,6 +30,7 @@
                                 <div class="text-sm text-red-400">{{ $message }}</div>
                             @enderror
                         </div>
+                        <!-- Image -->
                         <div class="sm:col-span-6">
                             <label for="image" class="block text-sm font-medium text-gray-700"> Image </label>
                             <div>
@@ -42,6 +44,7 @@
                                 <div class="text-sm text-red-400">{{ $message }}</div>
                             @enderror
                         </div>
+                        <!-- Description -->
                         <div class="sm:col-span-6 pt-5">
                             <label for="description" class="block text-sm font-medium text-gray-700">Description</label>
                             <div class="mt-1">

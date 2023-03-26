@@ -18,6 +18,7 @@
                 <div class="space-y-8 divide-y divide-gray-200 w-1/2 mt-10">
                     <form method="POST" action="{{ route('admin.tables.store') }}">
                         @csrf
+                        <!-- Name -->
                         <div class="sm:col-span-6">
                             <label for="name" class="block text-sm font-medium text-gray-700"> Name </label>
                             <div class="mt-1">
@@ -28,6 +29,7 @@
                                 <div class="text-sm text-red-400">{{ $message }}</div>
                             @enderror
                         </div>
+                        <!-- Guest Number -->
                         <div class="sm:col-span-6">
                             <label for="guest_number" class="block text-sm font-medium text-gray-700"> Guest Number
                             </label>
@@ -39,6 +41,7 @@
                                 <div class="text-sm text-red-400">{{ $message }}</div>
                             @enderror
                         </div>
+                        <!-- Status -->
                         <div class="sm:col-span-6 pt-5">
                             <label for="status" class="block text-sm font-medium text-gray-700">Status</label>
                             <div class="mt-1">
@@ -52,6 +55,7 @@
                                 <div class="text-sm text-red-400">{{ $message }}</div>
                             @enderror
                         </div>
+                        <!-- Location -->
                         <div class="sm:col-span-6 pt-5">
                             <label for="location" class="block text-sm font-medium text-gray-700">Location</label>
                             <div class="mt-1">
@@ -65,6 +69,7 @@
                                 <div class="text-sm text-red-400">{{ $message }}</div>
                             @enderror
                         </div>
+                        <!-- Store -->
                         <div class="mt-6 p-4">
                             <button type="submit"
                                 class="px-4 py-2 bg-indigo-500 hover:bg-indigo-700 rounded-lg text-white">Store</button>

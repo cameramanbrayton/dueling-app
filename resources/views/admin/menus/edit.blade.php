@@ -19,6 +19,7 @@
                     <form method="POST" action="{{ route('admin.menus.update', $menu->id) }}" enctype="multipart/form-data">
                         @csrf
                         @method('PUT')
+                        <!-- Name -->
                         <div class="sm:col-span-6">
                             <label for="name" class="block text-sm font-medium text-gray-700"> Name </label>
                             <div class="mt-1">
@@ -31,6 +32,7 @@
                                 <div class="text-sm text-red-400">{{ $message }}</div>
                             @enderror
                         </div>
+                        <!-- Image -->
                         <div class="sm:col-span-6">
                             <label for="image" class="block text-sm font-medium text-gray-700"> Image </label>
                             <div>
@@ -44,7 +46,7 @@
                                 <div class="text-sm text-red-400">{{ $message }}</div>
                             @enderror
                         </div>
-
+                        <!-- Price -->
                         <div class="sm:col-span-6">
                             <label for="price" class="block text-sm font-medium text-gray-700"> Price </label>
                             <div class="mt-1">
@@ -55,7 +57,7 @@
                                 <div class="text-sm text-red-400">{{ $message }}</div>
                             @enderror
                         </div>
-
+                        <!-- Description -->
                         <div class="sm:col-span-6 pt-5">
                             <label for="description" class="block text-sm font-medium text-gray-700">Description</label>
                             <div class="mt-1">
@@ -84,7 +86,7 @@
                                 <div class="text-sm text-red-400">{{ $message }}</div>
                             @enderror
                         </div>
-
+                        <!-- Update -->
                         <div class="mt-6 p-4">
                             <button type="submit"
                                 class="px-4 py-2 bg-indigo-500 hover:bg-indigo-700 rounded-lg text-white">Update</button>

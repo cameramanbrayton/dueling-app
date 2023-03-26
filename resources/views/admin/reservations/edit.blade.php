@@ -16,8 +16,9 @@
             <!-- Table Form -->
             <div class="m-2 p-2 bg-slate-100 rounded">
                 <div class="space-y-8 divide-y divide-gray-200 w-1/2 mt-10">
-                    <form method="POST" action="{{ route('admin.reservations.store') }}">
+                    <form method="POST" action="{{ route('admin.reservations.update') }}">
                         @csrf
+                        @method('PUT')
                         <!-- First Name -->
                         <div class="sm:col-span-6">
                             <label for="first_name" class="block text-sm font-medium text-gray-700"> First Name </label>
@@ -91,7 +92,10 @@
                             <div class="mt-1">
                                 <select id="table_id" name="table_id" class="form-multiselect block w-full mt-1">
                                     @foreach ($tables as $table)
-                                        <option value="{{ $table->id }}">{{ $table->name }}</option>
+                                        <option value="{{ $table->id }}" @selected($table->id == $reservation->table_id)>
+                                            {{ $table->name }}
+                                            ({{ $table->guest_number }} Guests)
+                                        </option>
                                     @endforeach
                                 </select>
                             </div>
@@ -99,10 +103,10 @@
                                 <div class="text-sm text-red-400">{{ $message }}</div>
                             @enderror
                         </div>
-
+                        <!-- Update -->
                         <div class="mt-6 p-4">
                             <button type="submit"
-                                class="px-4 py-2 bg-indigo-500 hover:bg-indigo-700 rounded-lg text-white">Store</button>
+                                class="px-4 py-2 bg-indigo-500 hover:bg-indigo-700 rounded-lg text-white">Update</button>
                         </div>
                     </form>
                 </div>
